@@ -18,7 +18,7 @@ module Sunspot
             self.pid = fork do
               $stderr.reopen('/dev/null')
               $stdout.reopen('/dev/null')
-              sunspot.run
+              server.run
             end
             kill_at_exit
             give_feedback

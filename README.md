@@ -57,7 +57,11 @@ The following articles served as guidance and inspiration for this gem:
 
 * [http://blog.kabisa.nl/2010/02/03/running-cucumber-features-with-sunspot_rails/](http://blog.kabisa.nl/2010/02/03/running-cucumber-features-with-sunspot_rails/)
 * [http://opensoul.org/blog/archives/2010/04/07/cucumber-and-sunspot/](http://opensoul.org/blog/archives/2010/04/07/cucumber-and-sunspot/)
-    
+
+## License
+
+sunspot-rails-tester is released under the MIT license. See LICENSE for details.
+
 ## Copyright
 
-Copyright (c) 2011 Justin Ko. See LICENSE for details.
+Copyright (c) 2011 Justin Ko

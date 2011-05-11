@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.author      = 'Justin Ko'
   s.email       = 'jko170@gmail.com'
-  s.homepage    = ""
+  s.homepage    = 'https://github.com/justinko/sunspot-rails-tester'
   s.summary     = 'Stub sunspot when you want, and enable it when you want'
   s.description = 'Enable sunspot during testing for *real* integration tests'
 

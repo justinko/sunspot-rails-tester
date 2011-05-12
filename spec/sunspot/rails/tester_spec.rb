@@ -5,7 +5,7 @@ module Sunspot
     describe Tester do
       let(:tester) { described_class }
       
-      describe '.fork_original_sunspot_session' do
+      describe '.start_original_sunspot_session' do
         let(:server) { double('sunspot_rails_server') }
         let(:pid) { 5555 }
         
@@ -19,17 +19,17 @@ module Sunspot
         after { tester.clear }
         
         it 'sets the "server" attribute' do
-          tester.fork_original_sunspot_session
+          tester.start_original_sunspot_session
           tester.server.should eq(server)
         end
         
         it 'sets the "started" attribute' do
-          tester.fork_original_sunspot_session
+          tester.start_original_sunspot_session
           tester.started.should be_an_instance_of(Time)
         end
         
         it 'sets the "pid" attribute' do
-          tester.fork_original_sunspot_session
+          tester.start_original_sunspot_session
           tester.pid.should eq(pid)
         end
       end

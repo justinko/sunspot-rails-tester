@@ -11,7 +11,7 @@ module Sunspot
         
         attr_accessor :server, :started, :pid
         
-        def fork_original_sunspot_session
+        def start_original_sunspot_session
           unless started?
             self.server = Sunspot::Rails::Server.new
             self.started = Time.now

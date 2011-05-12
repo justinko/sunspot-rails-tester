@@ -16,7 +16,7 @@ Here is an example RSpec 2 spec_helper.rb:
       end
       
       config.before :solr => true do
-        Sunspot::Rails::Tester.fork_original_sunspot_session
+        Sunspot::Rails::Tester.start_original_sunspot_session
         Sunspot.session = $original_sunspot_session
         Sunspot.remove_all!
       end
@@ -34,7 +34,7 @@ Let's go through what the above code does.
 * In the second `before` block, we use RSpec 2's metadata feature by
   adding `:solr => true`. Any example or example group with this metadata
   will run the _original_ sunspot session.
-  `Sunspot::Rails::Tester.fork_original_sunspot_session` starts the solr instance
+  `Sunspot::Rails::Tester.start_original_sunspot_session` starts the solr instance
   if it's not running.
   
 Here is an example spec that utilizes sunspot-rails-tester:

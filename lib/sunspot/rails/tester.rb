@@ -4,7 +4,7 @@ require 'forwardable'
 module Sunspot
   module Rails
     class Tester
-      VERSION = '0.0.3'
+      VERSION = '0.0.4'
       
       class << self
         extend Forwardable

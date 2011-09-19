@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_path  = 'lib'
   
-  s.add_dependency 'sunspot_rails', '~> 1.2.1'
+  s.add_dependency 'sunspot_rails', '~> 1.2'
   
   s.add_development_dependency 'rspec', '~> 2.5'
 end

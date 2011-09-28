@@ -8,9 +8,7 @@ Here is an example RSpec 2 spec_helper.rb:
 
     $original_sunspot_session = Sunspot.session
 
-    RSpec.configure do |config|
-      config.mock_with :rspec
-      
+    RSpec.configure do |config|      
       config.before do
         Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
       end
@@ -59,9 +57,7 @@ line out of the `RSpec.configure` block:
     $original_sunspot_session = Sunspot.session
     Sunspot::Rails::Tester.start_original_sunspot_session
 
-    RSpec.configure do |config|
-      config.mock_with :rspec
-      
+    RSpec.configure do |config|      
       config.before do
         Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
       end

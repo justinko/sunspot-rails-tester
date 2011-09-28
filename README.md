@@ -15,7 +15,7 @@ Here is an example RSpec 2 spec_helper.rb:
         Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
       end
       
-      config.before :solr => true do
+      config.before :each, :solr => true do
         Sunspot::Rails::Tester.start_original_sunspot_session
         Sunspot.session = $original_sunspot_session
         Sunspot.remove_all!
@@ -48,6 +48,27 @@ Here is an example spec that utilizes sunspot-rails-tester:
       
       it 'finds and displays a person', :solr => true do
         # uses actual solr - indexing will happen
+      end
+    end
+    
+## Spork
+
+To get this gem to work with Spork, all you need to do is move the `start_original_sunspot_session`
+line out of the `RSpec.configure` block:
+
+    $original_sunspot_session = Sunspot.session
+    Sunspot::Rails::Tester.start_original_sunspot_session
+
+    RSpec.configure do |config|
+      config.mock_with :rspec
+      
+      config.before do
+        Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
+      end
+      
+      config.before :each, :solr => true do
+        Sunspot.session = $original_sunspot_session
+        Sunspot.remove_all!
       end
     end
     

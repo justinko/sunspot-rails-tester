@@ -4,6 +4,8 @@ This gem allows you to "turn on" solr for certain portions
 of your tests. For the code that does not use solr, you
 would want to "stub" sunspot to avoid unneeded indexing.
 
+[![Code Climate](https://codeclimate.com/github/justinko/sunspot-rails-tester.png)](https://codeclimate.com/github/justinko/sunspot-rails-tester)
+
 Here is an example RSpec 2 spec_helper.rb:
 
 ```ruby

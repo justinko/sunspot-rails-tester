@@ -30,7 +30,13 @@ module Sunspot
         end
         
         def kill_at_exit
-          at_exit { Process.kill('TERM', pid) }
+          at_exit {
+            Process.kill('TERM', pid)
+            if port && server.respond_to?(:exec_in_solr_executable_directory)
+              command = ['./solr', 'stop', '-p', "#{port}"]
+              server.exec_in_solr_executable_directory(command)
+            end
+          }
         end
         
         def give_feedback
